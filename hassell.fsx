@@ -21,10 +21,6 @@ let approximateLimit start lambda =
         else helper (count + 1) (hassell x lambda)
     helper 0 start
 
-// Draw population diagram for x_1 = 1 and lambda = 10
-let n = 100
-[0 .. n] |> List.zip <| populationList 1.0 10.0 (n + 1)// |> Chart.Line
-
 // Draw bifurcation diagram for 0 <= lambda <= 100
 {0.0 .. 100.0} |> Seq.map (approximateLimit 1.0) |> Chart.Line
 
